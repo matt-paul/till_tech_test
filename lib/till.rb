@@ -18,14 +18,11 @@ class Till
       ordered_items.store(item, qty)
     end
   end
+
   #
-  # def subtotal
-  #   # loop through our ordered_items hash and match key to our JSON file and
-  #   # for each element, times the price by the quantity
-  #   ordered_items.each do |item, qty|
-  #
-  #   end
-  # end
+  def subtotal
+    ordered_items.map { |item, qty| menu[0]['prices'][0][item] * qty}.reduce(:+).round(2)
+  end
 
 private
 
