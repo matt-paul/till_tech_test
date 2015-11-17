@@ -19,9 +19,12 @@ class Till
     end
   end
 
-  #
   def subtotal
     ordered_items.map { |item, qty| menu[0]['prices'][0][item] * qty}.reduce(:+).round(2)
+  end
+
+  def tax
+    (subtotal * 0.0864).round(2)
   end
 
 private

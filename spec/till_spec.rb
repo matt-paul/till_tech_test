@@ -26,5 +26,11 @@ describe Till do
     expect(till.subtotal).to eq(26.20)
   end
 
+  it 'calculates the correct tax amount based on the subtotal' do
+    till.add_items('Tiramisu')
+    till.add_items('Affogato')
+    expect(till.tax).to eq(2.26)
+  end
+
 
 end
