@@ -1,4 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rspec'
-gem 'json'
+gem 'sinatra'
+
+group :test do
+  gem 'rspec'
+  gem 'json'
+  gem 'rspec-sinatra'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end

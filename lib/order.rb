@@ -1,6 +1,6 @@
 require 'json'
 
-class Till
+class Order
 
   attr_reader :ordered_items, :menu
 
