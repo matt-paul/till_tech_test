@@ -12,7 +12,7 @@ class Cafe < Sinatra::Base
 
   post '/receipt' do
     session[:item1] = params[:item]
-    session[:qty1] = params[:quantity]
+    session[:qty1] = params[:quantity].to_i
     session[:order] = Order.new
     redirect '/receipt'
   end
@@ -22,6 +22,7 @@ class Cafe < Sinatra::Base
     @qty1 = session[:qty1]
     @order = session[:order]
     @order.add_items(@item1, @qty1)
+    @total = @order.total
     erb :receipt
   end
 

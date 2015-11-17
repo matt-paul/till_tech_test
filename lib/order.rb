@@ -28,7 +28,7 @@ class Order
   end
 
   def total
-    subtotal + tax
+    (subtotal + tax).round(2)
   end
 
 private
