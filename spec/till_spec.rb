@@ -10,5 +10,11 @@ describe Till do
     expect(till.ordered_items).to eq({'Tiramisu'=>1, 'Affogato'=>1})
   end
 
+  it 'should add the quantities of an item' do
+    till.add_items('Tiramisu')
+    till.add_items('Tiramisu')
+    expect(till.ordered_items).to eq({'Tiramisu'=>2})
+  end
+
 
 end
