@@ -32,5 +32,11 @@ describe Till do
     expect(till.tax).to eq(2.26)
   end
 
+  it 'calculates the total amount that the customer should be charged' do
+    till.add_items('Tiramisu')
+    till.add_items('Affogato')
+    expect(till.total).to eq(28.46)
+  end
+
 
 end

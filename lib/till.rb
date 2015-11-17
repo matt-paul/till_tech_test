@@ -27,6 +27,10 @@ class Till
     (subtotal * 0.0864).round(2)
   end
 
+  def total
+    subtotal + tax
+  end
+
 private
 
   def on_menu?(item)
